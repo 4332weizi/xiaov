@@ -576,20 +576,21 @@ public class QQService {
             return;
         }
 
-        if (RandomUtils.nextFloat() >= 0.9) {
-            Long latestAdTime = GROUP_AD_TIME.get(groupId);
-            if (null == latestAdTime) {
-                latestAdTime = 0L;
-            }
-
-            final long now = System.currentTimeMillis();
-
-            if (now - latestAdTime > 1000 * 60 * 30) {
-                msg = msg + "\n\n（" + ADS.get(RandomUtils.nextInt(ADS.size())) + "）";
-
-                GROUP_AD_TIME.put(groupId, now);
-            }
-        }
+//		去广告
+//        if (RandomUtils.nextFloat() >= 0.9) {
+//            Long latestAdTime = GROUP_AD_TIME.get(groupId);
+//            if (null == latestAdTime) {
+//                latestAdTime = 0L;
+//            }
+//
+//            final long now = System.currentTimeMillis();
+//
+//            if (now - latestAdTime > 1000 * 60 * 30) {
+//                msg = msg + "\n\n（" + ADS.get(RandomUtils.nextInt(ADS.size())) + "）";
+//
+//                GROUP_AD_TIME.put(groupId, now);
+//            }
+//        }
 
         sendMessageToGroup(groupId, msg);
     }
@@ -617,20 +618,21 @@ public class QQService {
             return;
         }
 
-        if (RandomUtils.nextFloat() >= 0.9) {
-            Long latestAdTime = DISCUSS_AD_TIME.get(discussId);
-            if (null == latestAdTime) {
-                latestAdTime = 0L;
-            }
-
-            final long now = System.currentTimeMillis();
-
-            if (now - latestAdTime > 1000 * 60 * 30) {
-                msg = msg + "\n\n（" + ADS.get(RandomUtils.nextInt(ADS.size())) + "）";
-
-                DISCUSS_AD_TIME.put(discussId, now);
-            }
-        }
+//		去广告
+//        if (RandomUtils.nextFloat() >= 0.9) {
+//            Long latestAdTime = DISCUSS_AD_TIME.get(discussId);
+//            if (null == latestAdTime) {
+//                latestAdTime = 0L;
+//            }
+//
+//            final long now = System.currentTimeMillis();
+//
+//            if (now - latestAdTime > 1000 * 60 * 30) {
+//                msg = msg + "\n\n（" + ADS.get(RandomUtils.nextInt(ADS.size())) + "）";
+//
+//                DISCUSS_AD_TIME.put(discussId, now);
+//            }
+//        }
 
         sendMessageToDiscuss(discussId, msg);
     }
